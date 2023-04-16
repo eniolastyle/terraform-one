@@ -4,6 +4,8 @@ This Terraform project creates two EC2 instances and a load balancer in front of
 It is expected that you have you AWS secrets configured on your system.
 
 ## Output
+![Screenshot from 2023-04-16 12-51-17](https://user-images.githubusercontent.com/58726365/232307967-7ae89406-5bf4-4f04-aa36-0cd54edc349b.png)
+![Screenshot from 2023-04-16 12-51-08](https://user-images.githubusercontent.com/58726365/232307981-4b8a6aee-1a3a-47a3-9377-e5b59896b531.png)
 
 ## Usage
 

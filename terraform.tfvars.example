@@ -1,0 +1,5 @@
+public_key = kindly provide your public_key here"
+
+s3_bucket_name = "your created bucket name"
+
+region = "us-east-1"

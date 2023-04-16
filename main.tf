@@ -136,7 +136,7 @@ resource "aws_security_group" "general-sg" {
 }
 
 resource "aws_key_pair" "ec2-server" {
-  key_name   = "ec2-server"
+  key_name   = var.key_name
   public_key = var.public_key
 }
 

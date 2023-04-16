@@ -25,7 +25,7 @@ resource "aws_instance" "nginx-server" {
   user_data              = <<-EOF
                 #!/bin/bash
                 sudo apt-get update
-                sudo apt-get install apache2 -y
+                sudo apt-get install nginx -y
                 sudo systemctl start nginx
                 sudo systemctl enable nginx
                 EOF
@@ -44,7 +44,7 @@ resource "aws_instance" "apache-server" {
   user_data              = <<-EOF
                 #!/bin/bash
                 sudo apt-get update
-                sudo apt-get install nginx -y
+                sudo apt-get install apache2 -y
                 sudo systemctl start apache2
                 sudo systemctl enable apache2
                 EOF

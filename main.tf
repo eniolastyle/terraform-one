@@ -4,11 +4,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "~>4.0"
     }
-    backend "s3" {
-      bucker = var.s3_bucket_name
-      key    = "aws/terraform1/terraform.tfstate"
-      region = var.region
-    }
+  }
+  backend "s3" {
+    bucket = var.s3_bucket_name
+    key    = "aws/terraform1/terraform.tfstate"
+    region = "us-east-1"
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_instance" "apache-server" {
                 EOF
 
   tags = {
-    "Name" = "nginx-server"
+    "Name" = "apache-server"
   }
 }
 
@@ -60,7 +60,7 @@ resource "aws_lb" "terraform-one" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.general-sg.id]
-  subnets            = aws_subnet.subnet.*.id
+  subnets            = ["subnet-031b178c277670599", "subnet-0477dfcc1f60ae573", "subnet-0d02beec187990de6"]
 }
 
 resource "aws_lb_target_group" "terraform-one" {

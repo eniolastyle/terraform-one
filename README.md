@@ -4,6 +4,7 @@ This Terraform project creates two EC2 instances and a load balancer in front of
 It is expected that you have you AWS secrets configured on your system.
 
 ## Output
+
 ![Screenshot from 2023-04-16 12-51-17](https://user-images.githubusercontent.com/58726365/232307967-7ae89406-5bf4-4f04-aa36-0cd54edc349b.png)
 ![Screenshot from 2023-04-16 12-51-08](https://user-images.githubusercontent.com/58726365/232307981-4b8a6aee-1a3a-47a3-9377-e5b59896b531.png)
 
@@ -21,12 +22,11 @@ cd terraform-one
 
 - region = "us-east-1"
 - key_name = "your-keypair-name"
-- s3_bucket_name = "your-tfstate-bucket-name"
 - public_key = "your public key" // Note this should be store as a secret for better security.
 
 4. Initialize the Terraform project:
 
-terraform init -backend-config="bucket=${s3_bucket_name}"
+terraform init -backend-config="bucket=<s3_bucket_name>"
 
 5. Preview the changes that Terraform will make:
 
@@ -44,13 +44,13 @@ terraform destroy --var-file="terraform.tfvars"
 
 The following variables can be defined in your `terraform.tfvars` file:
 
-| Variable       | Description                                      | Type   |
-| -------------- | ------------------------------------------------ | ------ |
-| access_key     | AWS access key                                   | string |
-| secret_key     | AWS secret key                                   | string |
-| region         | AWS region where resources will be created       | string |
-| key_name       | Name of an existing key pair in your AWS account | string |
-| s3_bucket_name | Name of an S3 bucket to store Terraform state    | string |
+| Variable   | Description                                      | Type   |
+| ---------- | ------------------------------------------------ | ------ |
+| access_key | AWS access key                                   | string |
+| secret_key | AWS secret key                                   | string |
+| region     | AWS region where resources will be created       | string |
+| key_name   | Name of an existing key pair in your AWS account | string |
+| public_key | Your generated pub key with ssh-keygen           | string |
 
 If you have any further clarification, kindly reach out to me with the below information.
 

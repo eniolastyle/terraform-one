@@ -1,5 +1,4 @@
-# Terraform AWS EC2 Example
-
+# Terraform with AWS Load Balancer and Ec2
 This Terraform project creates two EC2 instances and a load balancer in front of them, with Nginx installed on Instance A and Apache installed on Instance B.
 It is expected that you have you AWS secrets configured on your system.
 

@@ -28,7 +28,7 @@ jobs:
       - name: Terraform Init
         run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME"
       - name: Echo
-        run: echo "${github.ref}"
+        run: echo "${{ env.github.ref }}"
       - name: Terraform plan
         run: |
           terraform plan \

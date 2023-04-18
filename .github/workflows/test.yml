@@ -41,7 +41,7 @@ jobs:
   pull-jb:
     needs: push-jb
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event.pull_request.merged == true
+    if: github.ref == 'main' && github.event.pull_request.merged == true
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2

@@ -59,3 +59,4 @@ jobs:
           terraform apply \
           -var-file=terraform.tfvars \
           -var="public_key=$PUBLIC_SSH_KEY" \
+

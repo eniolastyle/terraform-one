@@ -1,0 +1,7 @@
+{
+  "yaml.schemas": {
+    "./schemas/githubAction.json": [".github/workflows/**/*.yaml", "."],
+    "file:///home/aboo-umair/.vscode/extensions/docsmsft.docs-yaml-1.0.0/dist/toc.schema.json": "/toc\\.yml/i",
+    "https://json.schemastore.org/eslintrc.json": "file:///home/aboo-umair/Desktop/project/devops-mh/do-vir/terraform1/.github/workflows/test.yml"
+  }
+}

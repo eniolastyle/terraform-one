@@ -40,11 +40,7 @@ jobs:
   pull-jb:
     needs: push-jb
     runs-on: ubuntu-latest
-    if: |
-      github.event_name == 'pull_request' && 
-      github.event.action == 'closed' && 
-      github.event.pull_request.merged && 
-      github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2

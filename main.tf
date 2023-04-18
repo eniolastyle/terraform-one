@@ -12,8 +12,7 @@ terraform {
 }
 
 provider "aws" {
-  profile = "eniaccess"
-  region  = "us-east-1"
+  region = "us-east-1"
 }
 
 # Provision the ec2 instance for NGINX

@@ -6,6 +6,7 @@ on:
       - test
       - main
   pull_request:
+    types: [closed]
     branches:
       - main
 
@@ -39,7 +40,7 @@ jobs:
   pull-jb:
     needs: push-jb
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && github.event.pull_request.merged == true
     steps:
       - name: Code Checkout
         uses: actions/checkout@v2
@@ -50,9 +51,7 @@ jobs:
         with:
           name: tfplan
           path: ${{ github.workspace }}
+      - name: Terraform Init
+        run: terraform init -backend-config="bucket=$TF_STATE_BUCKET_NAME"
       - name: Terraform apply
         run: |
-          terraform plan \
-          -var-file=terraform.tfvars \
-          -var="public_key=$PUBLIC_SSH_KEY" \
-          -out=tf.plan

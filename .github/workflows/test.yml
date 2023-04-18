@@ -54,5 +54,3 @@ jobs:
           path: ${{ github.workspace }}
       - name: Terraform Init
         run: $ terraform init -reconfigure
-      - name: Terraform apply
-        run: terraform apply -auto-approve tf.plan
